@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const elementoH1 = document.createElement('h1');
+      elementoH1.innerText = 'Exercício - JavaScript DOM';
+      document.body.appendChild(elementoH1);
+
+      const tagMain = document.createElement('main');
+      tagMain.className = 'main-content';
+      document.body.appendChild(tagMain);
+
+     const tagSection = document.createElement('section');
+     tagSection.className = 'center-content'
+     tagMain.appendChild(tagSection);
+
+     const tagP = document.createElement('p');
+     tagP.innerText = "Olá";
+     tagSection.appendChild(tagP);
+
+     const tagSection2 = document.createElement('section');
+     tagSection2.className = 'left-content';
+     tagMain.appendChild(tagSection2);
+
+     const tagSection3 = document.createElement('section');
+     tagSection3.className = 'right-content';
+     tagMain.appendChild(tagSection3);
+
+     const tagImg = document.createElement('img')
+     tagImg.src = 'https://picsum.photos/200';
+     tagImg.className = 'small-image';
+     tagSection2.appendChild(tagImg);
+
+     const elementList = document.createElement('ul');
+     const elementListItens = document.createElement('li');
+     const arrayNumbers = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+        tagSection3.appendChild(elementList);
+        elementListItens.innerHTML = arrayNumbers[num]
+        elementList.appendChild(elementListItens);
+
+        const tag1H3 = document.createElement('h3');
+        const tag2H3 = document.createElement('h3');
+        const tag3H3 = document.createElement('h3');
+        tagMain.appendChild(tag1H3);
+        tagMain.appendChild(tag2H3);
+        tagMain.appendChild(tag3H3);
+
+
+const title = document.querySelector('h1')
+title.className = 'title';
+
+const description = document.querySelectorAll('h3');
+description.className = 'description';
+
+const sectionLeft = document.getElementsByClassName('left-content')[0];
+tagMain.removeChild(sectionLeft);
+
+const sectionRigth = document.getElementsByClassName('rigth-content')[0];
+sectionRigth.style.marginRigth = 'auto';
+
+const changeColor = document.getElementsByClassName('center-content');
+changeColor.parentNode.style.backgroundColor = 'green'
+
+const removeNumber = document.getElementsByTagName('ul')[0];
+removeNumber.lastChild.remove();
+removeNumber.lastChild.remove();
+
+    </script>
+  </body>
+</html>
